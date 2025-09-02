@@ -16,7 +16,7 @@
   button:focus,
   select:focus,
   textarea:focus {
-    outline: 2px solid rgb(37 99 235 / 0.2);
+    outline: 2px solid rgb(220 38 38 / 0.2);
     outline-offset: 2px;
   }
 }
@@ -24,16 +24,16 @@
 @layer components {
   /* HI Interactive button styles */
   .hi-button-primary {
-    @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-lg shadow-blue-200/50 transition-all duration-200 hover:shadow-xl hover:shadow-blue-200/60;
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold shadow-lg shadow-red-200/50 transition-all duration-200 hover:shadow-xl hover:shadow-red-200/60;
   }
 
   .hi-button-secondary {
-    @apply border border-blue-200 text-blue-600 hover:bg-blue-50 font-medium transition-colors duration-200;
+    @apply border border-red-200 text-red-600 hover:bg-red-50 font-medium transition-colors duration-200;
   }
 
   /* HI Interactive form field styles */
   .hi-input {
-    @apply border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 bg-white transition-all duration-200;
+    @apply border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-100 bg-white transition-all duration-200;
   }
 
   /* HI Interactive card styles */
@@ -42,12 +42,12 @@
   }
 
   .hi-card-elevated {
-    @apply bg-white rounded-2xl shadow-xl shadow-blue-100/50 border-0 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-100/60;
+    @apply bg-white rounded-2xl shadow-xl shadow-red-100/50 border-0 transition-all duration-300 hover:shadow-2xl hover:shadow-red-100/60;
   }
 
   /* HI Interactive gradient backgrounds */
   .hi-gradient-primary {
-    background: linear-gradient(135deg, rgb(37, 99, 235) 0%, rgb(29, 78, 216) 100%);
+    background: linear-gradient(135deg, rgb(220, 38, 38) 0%, rgb(185, 28, 28) 100%);
   }
 
   .hi-gradient-secondary {
@@ -56,7 +56,7 @@
 
   /* HI Interactive text gradients */
   .hi-text-gradient {
-    @apply bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent;
   }
 
   /* Professional hover effects */
@@ -88,11 +88,11 @@
 
   /* HI Interactive badge styles */
   .hi-badge {
-    @apply inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full;
+    @apply inline-flex items-center space-x-2 bg-red-50 px-4 py-2 rounded-full;
   }
 
   .hi-badge-text {
-    @apply text-blue-700 text-sm font-medium;
+    @apply text-red-700 text-sm font-medium;
   }
 
   /* Professional form validation styles */
@@ -114,25 +114,25 @@
   }
 
   .hi-alert-info {
-    @apply bg-blue-50 border border-blue-200 text-blue-800 rounded-lg p-4;
+    @apply bg-red-50 border border-red-200 text-red-800 rounded-lg p-4;
   }
 
   /* Professional navigation styles */
   .hi-nav-link {
-    @apply text-slate-600 hover:text-blue-600 transition-colors text-sm font-medium;
+    @apply text-slate-600 hover:text-red-600 transition-colors text-sm font-medium;
   }
 
   .hi-nav-link-active {
-    @apply text-blue-600 font-medium;
+    @apply text-red-600 font-medium;
   }
 
   /* Brand logo container */
   .hi-logo {
-    @apply w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center shadow-sm;
+    @apply w-8 h-8 bg-gradient-to-br from-red-600 to-red-700 rounded-lg flex items-center justify-center shadow-sm;
   }
 
   .hi-logo-large {
-    @apply w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200/50;
+    @apply w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg shadow-red-200/50;
   }
 
   /* Professional typography scales */
@@ -194,12 +194,12 @@
   }
 
   .hi-scrollbar::-webkit-scrollbar-thumb {
-    background: rgb(148 163 184);
+    background: rgb(220 38 38);
     border-radius: 3px;
   }
 
   .hi-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgb(100 116 139);
+    background: rgb(185 28 28);
   }
 
   /* Professional animation utilities */
@@ -292,7 +292,7 @@
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .hi-button-primary {
-    @apply border-2 border-blue-800;
+    @apply border-2 border-red-800;
   }
 
   .hi-input {

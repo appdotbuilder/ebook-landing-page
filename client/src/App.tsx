@@ -46,21 +46,14 @@ function App() {
       {/* Header */}
       <header className="bg-white border-b border-slate-100 sticky top-0 z-50 backdrop-blur-sm bg-white/95">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-center">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">HI</span>
-              </div>
-              <span className="text-slate-800 font-semibold text-xl">Interactive</span>
+              <img 
+                src="https://file-manager.hi-interactive.com/website-2023/hiinteractivelogodark.svg"
+                alt="HI Interactive"
+                className="h-8 w-auto"
+              />
             </div>
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#" className="text-slate-600 hover:text-blue-600 transition-colors text-sm font-medium">Services</a>
-              <a href="#" className="text-slate-600 hover:text-blue-600 transition-colors text-sm font-medium">Portfolio</a>
-              <a href="#" className="text-slate-600 hover:text-blue-600 transition-colors text-sm font-medium">About</a>
-              <Button variant="outline" size="sm" className="border-blue-200 text-blue-600 hover:bg-blue-50">
-                Contact
-              </Button>
-            </nav>
           </div>
         </div>
       </header>
@@ -68,8 +61,8 @@ function App() {
       {/* Hero Section */}
       <main className="relative">
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-slate-50 -z-10"></div>
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-blue-100/20 to-transparent rounded-full blur-3xl -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-white to-slate-50 -z-10"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-red-100/20 to-transparent rounded-full blur-3xl -z-10"></div>
         
         <div className="container mx-auto px-4 py-16 lg:py-24">
           <div className="max-w-7xl mx-auto">
@@ -78,14 +71,14 @@ function App() {
               {/* Left Column - Content */}
               <div className="space-y-8">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full">
-                    <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                    <span className="text-blue-700 text-sm font-medium">Free Ebook Collection</span>
+                  <div className="inline-flex items-center space-x-2 bg-red-50 px-4 py-2 rounded-full">
+                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+                    <span className="text-red-700 text-sm font-medium">Free Ebook Collection</span>
                   </div>
                   
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900">
                     Design Systems for{' '}
-                    <span className="text-blue-600">Business Growth</span>{' '}
+                    <span className="text-red-600">Business Growth</span>{' '}
                     and Technical Excellence
                   </h1>
                   
@@ -105,7 +98,7 @@ function App() {
                     { icon: '👥', title: 'Executive Insights', desc: 'Strategic leadership guidance' }
                   ].map((benefit, index) => (
                     <div key={index} className="flex items-start space-x-3">
-                      <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
                         <span className="text-lg">{benefit.icon}</span>
                       </div>
                       <div>
@@ -116,24 +109,16 @@ function App() {
                   ))}
                 </div>
 
-                {/* Trust Indicators */}
-                <div className="pt-8 border-t border-slate-100">
-                  <p className="text-sm text-slate-500 mb-4">Trusted by design leaders at:</p>
-                  <div className="flex flex-wrap items-center gap-8">
-                    {['Microsoft', 'Google', 'Meta', 'Netflix', 'Spotify'].map((company) => (
-                      <span key={company} className="text-slate-400 font-medium text-sm">{company}</span>
-                    ))}
-                  </div>
-                </div>
+
               </div>
 
               {/* Right Column - Form */}
               <div className="flex justify-center lg:justify-end">
                 <div className="w-full max-w-md">
-                  <Card className="border-0 shadow-xl shadow-blue-100/50 bg-white">
+                  <Card className="border-0 shadow-xl shadow-red-100/50 bg-white">
                     <CardContent className="p-8">
                       <div className="text-center mb-8">
-                        <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg shadow-blue-200/50">
+                        <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg shadow-red-200/50">
                           <span className="text-2xl">📚</span>
                         </div>
                         <h2 className="text-2xl font-bold text-slate-900 mb-2">
@@ -167,7 +152,7 @@ function App() {
                                 setFormData((prev: CreateEbookRequestInput) => ({ ...prev, name: e.target.value }))
                               }
                               required
-                              className="h-12 text-base border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 bg-white"
+                              className="h-12 text-base border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-100 bg-white"
                               disabled={isLoading}
                             />
                           </div>
@@ -181,7 +166,7 @@ function App() {
                                 setFormData((prev: CreateEbookRequestInput) => ({ ...prev, email: e.target.value }))
                               }
                               required
-                              className="h-12 text-base border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 bg-white"
+                              className="h-12 text-base border-slate-200 focus:border-red-500 focus:ring-2 focus:ring-red-100 bg-white"
                               disabled={isLoading}
                             />
                           </div>
@@ -190,7 +175,7 @@ function App() {
                         <Button 
                           type="submit" 
                           disabled={isLoading}
-                          className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-base shadow-lg shadow-blue-200/50 transition-all duration-200 hover:shadow-xl hover:shadow-blue-200/60 border-0"
+                          className="w-full h-12 bg-red-600 hover:bg-red-700 text-white font-semibold text-base shadow-lg shadow-red-200/50 transition-all duration-200 hover:shadow-xl hover:shadow-red-200/60 border-0"
                         >
                           {isLoading ? (
                             <div className="flex items-center space-x-2">
@@ -206,7 +191,7 @@ function App() {
 
                         <p className="text-xs text-slate-500 text-center leading-relaxed">
                           By downloading, you agree to receive occasional emails about design systems. 
-                          Unsubscribe anytime. <a href="#" className="text-blue-600 hover:text-blue-700">Privacy Policy</a>
+                          Unsubscribe anytime. <a href="#" className="text-red-600 hover:text-red-700">Privacy Policy</a>
                         </p>
                       </form>
                     </CardContent>
@@ -232,7 +217,7 @@ function App() {
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg transition-shadow">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6">
                     <span className="text-2xl">🎯</span>
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4">Executive Playbook</h3>
@@ -250,7 +235,7 @@ function App() {
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-lg transition-shadow">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-6">
                     <span className="text-2xl">⚡</span>
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4">Technical Implementation</h3>
@@ -277,18 +262,19 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="flex items-center justify-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">HI</span>
-              </div>
-              <span className="text-white font-semibold text-xl">Interactive</span>
+              <img 
+                src="https://file-manager.hi-interactive.com/website-2023/hiinteractivelogodark.svg"
+                alt="HI Interactive"
+                className="h-8 w-auto filter invert"
+              />
             </div>
             <p className="text-slate-400 text-sm mb-4">
               Empowering digital transformation through design systems and strategic UX consulting.
             </p>
             <div className="flex justify-center space-x-6 text-sm">
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">Terms of Service</a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">Contact</a>
+              <a href="#" className="text-slate-400 hover:text-red-400 transition-colors">Privacy Policy</a>
+              <a href="#" className="text-slate-400 hover:text-red-400 transition-colors">Terms of Service</a>
+              <a href="#" className="text-slate-400 hover:text-red-400 transition-colors">Contact</a>
             </div>
             <div className="mt-8 pt-8 border-t border-slate-800">
               <p className="text-slate-500 text-xs">
