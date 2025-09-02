@@ -1,26 +1,48 @@
+import { db } from '../db';
+import { ebookRequestsTable } from '../db/schema';
 import { type CreateEbookRequestInput, type EbookRequestResponse } from '../schema';
+import { eq } from 'drizzle-orm';
 
 export async function createEbookRequest(input: CreateEbookRequestInput): Promise<EbookRequestResponse> {
-    // This is a placeholder declaration! Real code should be implemented here.
-    // The goal of this handler is to:
-    // 1. Validate the input data (name and email)
-    // 2. Check if email already exists in the database
-    // 3. Create a new ebook request record in the database
-    // 4. Send the ebook via email (or queue for sending)
-    // 5. Return success/failure response with appropriate message
-    
     try {
-        // Placeholder logic - in real implementation:
-        // - Insert into ebookRequestsTable using drizzle ORM
-        // - Send email with ebook attachment or download link
-        // - Update email_sent status
-        
+        // Check if email already exists
+        const existingRequest = await db.select()
+            .from(ebookRequestsTable)
+            .where(eq(ebookRequestsTable.email, input.email))
+            .limit(1)
+            .execute();
+
+        if (existingRequest.length > 0) {
+            return {
+                success: false,
+                message: "This email address has already been used to request the ebook."
+            };
+        }
+
+        // Create new ebook request record
+        const result = await db.insert(ebookRequestsTable)
+            .values({
+                name: input.name,
+                email: input.email,
+                email_sent: false // Will be updated when email is actually sent
+            })
+            .returning()
+            .execute();
+
+        const newRequest = result[0];
+
+        // TODO: In a real implementation, this is where you would:
+        // 1. Send the ebook via email service (SendGrid, AWS SES, etc.)
+        // 2. Update the email_sent status to true after successful email delivery
+        // For now, we'll simulate successful creation
+
         return {
             success: true,
             message: "Thank you! Your ebook request has been received. Please check your email.",
-            id: 1 // Placeholder ID
+            id: newRequest.id
         };
     } catch (error) {
+        console.error('Ebook request creation failed:', error);
         return {
             success: false,
             message: "Sorry, something went wrong. Please try again later."
