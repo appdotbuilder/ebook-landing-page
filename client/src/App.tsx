@@ -71,10 +71,7 @@ function App() {
               {/* Left Column - Content */}
               <div className="space-y-8">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center space-x-2 bg-red-50 px-4 py-2 rounded-full">
-                    <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-                    <span className="text-red-700 text-sm font-medium">Free Ebook Collection</span>
-                  </div>
+
                   
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-slate-900">
                     Design Systems for{' '}
@@ -112,8 +109,18 @@ function App() {
 
               </div>
 
-              {/* Right Column - Form */}
-              <div className="flex justify-center lg:justify-end">
+              {/* Right Column - Image and Form */}
+              <div className="flex flex-col items-center lg:items-end space-y-8">
+                {/* Hero Image */}
+                <div className="w-full max-w-lg">
+                  <img 
+                    src="https://building-your-design-system-ebook.hi-interactive.com/images/HeaderEBooks.png"
+                    alt="Design Systems Ebooks"
+                    className="w-full h-auto rounded-2xl shadow-lg"
+                  />
+                </div>
+                
+                {/* Form */}
                 <div className="w-full max-w-md">
                   <Card className="border-0 shadow-xl shadow-red-100/50 bg-white">
                     <CardContent className="p-8">
@@ -251,6 +258,35 @@ function App() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Content Section */}
+        <section className="bg-white py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                  What content does the ebooks have?
+                </h2>
+                <p className="text-xl text-slate-600">
+                  How to build and how the benefits of a design system work.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">The Technical Guide to Scalable Design Systems</h3>
+                <p className="text-slate-600 leading-relaxed mb-4">
+                  This guide is designed for UX Leads, Product Managers, and technical teams who want to build design systems that are scalable, efficient, and developer-friendly. What you'll learn:
+                </p>
+                <ul className="list-disc list-inside text-slate-600 space-y-2">
+                  <li>How to structure a design system for scalability across multiple products</li>
+                  <li>Best practices to ensure UI/UX consistency with reusable components</li>
+                  <li>How design systems reduce bugs and improve development speed</li>
+                  <li>Practical steps to align design and development teams</li>
+                </ul>
               </div>
             </div>
           </div>
