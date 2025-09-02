@@ -49,9 +49,9 @@ function App() {
           <div className="flex items-center justify-center">
             <div className="flex items-center space-x-2">
               <img 
-                src="https://file-manager.hi-interactive.com/website-2023/hiinteractivelogodark.svg"
+                src="https://media.designrush.com/agencies/293148/conversions/Hi-Interactive-logo-profile.jpg"
                 alt="HI Interactive"
-                className="h-8 w-auto"
+                className="h-8 w-auto filter invert"
               />
             </div>
           </div>
